@@ -1,24 +1,6 @@
-#@author Sudheer P.V.N.S
+from lrucache import *
 
-import collections
-
-class LRUCache:
-    def __init__(self, capacity):
-        self.capacity = capacity
-        self.tm = 0
-        self.cache = {}
-        self.lru= {}
-
-    def put(self,key,value):
-        pass
-
-    def get(self, key):
-        pass
-    
-    def get_cache(self):
-        pass
-if __name__ == "__main__":
-    obj = LRUCache(5)
+obj = LRUCache(5)
 
 l = ['one','two','three','four','five']
 for i in range(1,6):
