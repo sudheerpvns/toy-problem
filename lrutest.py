@@ -1,23 +1,18 @@
 from lrucache import *
-
-obj = LRUCache(5)
-
-l = ['one','two','three','four','five']
-for i in range(1,6):
-    obj.put(i,l[i-1])
-obj.get_cache()
-
-if 'one' == obj.get(1):
-    print("Test case 1 passed")
-else:
-    print("Fialed 1")
-if -1 == obj.get(6):
-    print("Test case 2 passed")
-else:
-    print("Fialed 2")
-obj.put(6,'six')
-obj.get_cache()
-if obj.get(1) == -1:
-    print("Test case 3 passed")
-else:
-    print("Fialed 3")
+class testLRU:
+    def test(self,obj):
+        l = ['one','two','three','four','five']
+        for i in range(1,6):
+            obj.put(i,l[i-1])
+        assert -1 == obj.get(1), "Failed 1st case"
+        assert -1 == obj.get(6),"Failed 2nd Test case"
+        obj.put(6,'six')
+        assert obj.get(2) == -1, "Failed 3rd Test Case"
+        k = [obj.cache[i] for i in obj.cache]
+        print(k)
+        assert k == ['four','five','six'], 'Failed LRU'
+        print("ALL TESTS PASSED")
+if __name__ == "__main__":
+     obj = LRUCache(3)
+     p = testLRU()
+     p.test(obj)
