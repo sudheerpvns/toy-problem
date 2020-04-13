@@ -1,6 +1,5 @@
 #@author Sudheer P.V.N.S
 
-import collections
 
 class LRUCache:
     def __init__(self, capacity):
