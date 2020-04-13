@@ -3,9 +3,14 @@
 import collections
 
 class LRUCache:
-    def __init__(self, capacity, delta=None):
+    def __init__(self, capacity):
         self.capacity = capacity
-        self.delta = delta
-        self.dict = {}
-        self.list= []
+        self.tm = 0
+        self.cache = {}
+        self.lru= {}
 
+    def put(self,key,value):
+        pass
+
+    def get(self, key):
+        pass
