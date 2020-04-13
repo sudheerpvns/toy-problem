@@ -28,16 +28,16 @@ class LRUCache:
         for i in self.lru:
             print(i,self.cache[i])
 
-if __name__ == "__main__":
-    obj = LRUCache(3)
+# if __name__ == "__main__":
+#     obj = LRUCache(3)
 
-l = ['one','two','three','four','five']
-for i in range(1,6):
-    obj.put(i,l[i-1])
-assert -1 == obj.get(1), "Failed 1st case"
-assert -1 == obj.get(6),"Failed 2nd Test case"
-obj.put(6,'six')
-assert obj.get(2) == -1, "Failed 3rd Test Case"
-k = [obj.cache[i] for i in obj.cache]
-assert k == ['four','five','six'], 'Failed LRU'
-print("ALL TESTS PASSED")
+# l = ['one','two','three','four','five']
+# for i in range(1,6):
+#     obj.put(i,l[i-1])
+# assert -1 == obj.get(1), "Failed 1st case"
+# assert -1 == obj.get(6),"Failed 2nd Test case"
+# obj.put(6,'six')
+# assert obj.get(2) == -1, "Failed 3rd Test Case"
+# k = [obj.cache[i] for i in obj.cache]
+# assert k == ['four','five','six'], 'Failed LRU'
+# print("ALL TESTS PASSED")
