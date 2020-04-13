@@ -14,3 +14,6 @@ class LRUCache:
 
     def get(self, key):
         pass
+    
+    def get_cache(self, key):
+        pass
