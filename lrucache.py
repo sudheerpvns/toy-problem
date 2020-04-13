@@ -34,28 +34,10 @@ if __name__ == "__main__":
 l = ['one','two','three','four','five']
 for i in range(1,6):
     obj.put(i,l[i-1])
-print("Current Cache:")
-obj.get_cache()
-print('#'*20)
-if -1 == obj.get(1):
-    print("Test case 1 passed")
-else:
-    print("Fialed 1")
-if -1 == obj.get(6):
-    print("Test case 2 passed")
-else:
-    print("Fialed 2")
-
+assert -1 == obj.get(1), "Failed 1st case"
+assert -1 == obj.get(6),"Failed 2nd Test case"
 obj.put(6,'six')
-print("Current Cache:")
-obj.get_cache()
-print('#'*20)
-if obj.get(2) == -1:
-    print("Test case 3 passed")
-else:
-    print("Fialed 3")
+assert obj.get(2) == -1, "Failed 3rd Test Case"
 k = [obj.cache[i] for i in obj.cache]
-if k == ['four','five','six']:
-    print('test case 4 passed')
-else:
-    print('Failed 4')
+assert k == ['four','five','six'], 'Failed LRU'
+print("ALL TESTS PASSED")
